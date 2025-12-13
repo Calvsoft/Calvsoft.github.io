@@ -8,13 +8,22 @@
 .hero {
     width: 100%;
     min-height: 100vh;
-    background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.37), rgba(94, 7, 255, 0.774)), url(images/background.jpg);
+    background: radial-gradient(circle at 30% 40%, rgba(255, 180, 255, 0.18), transparent 45%), radial-gradient(circle at 70% 60%, rgba(120, 80, 255, 0.25), transparent 50%), linear-gradient(135deg, #1b0f2e, #3a167a, #5c258d);
+    animation: drift 40s ease infinite;
+    background-size: 200% 200%;
+    box-shadow: inset 0 0 200px rgba(0, 0, 0, 0.45);
     background-position: center;
-    background-size: cover;
     padding: 10px 4%;
     text-align: center;
     color: #fff;
 }
+
+@keyframes drift {
+  0%   { background-position: 45% 50%; }
+  50%  { background-position: 55% 50%; }
+  100% { background-position: 45% 50%; }
+}
+
 
 nav {
     width: 100%;
@@ -33,11 +42,18 @@ nav {
     background: linear-gradient(#ffd104, #f84600);
     color: #fff;
     font-size: 16px;
+    font-weight: bold;
     padding: 16px 30px;
     border-radius: 30px;
     border: 0;
     outline: 0;
     cursor: pointer;
+}
+
+.btn:hover {
+    background: linear-gradient(#ffc904, #f87000);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
+    transition-duration: 0.3s;
 }
 
 .content {
